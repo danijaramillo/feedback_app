@@ -1,1 +1,4 @@
-<h1> Place holder <h1>
+- @posts.each do |post|
+    %h2= link_to post.title, post
+
+= link_to "Add New Project", new_post_path
