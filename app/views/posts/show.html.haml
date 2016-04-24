@@ -1,18 +1,29 @@
-= image_tag @post.image.url(:medium)
-%h1= @post.title
-%p= @post.link
-%p= @post.description
-%p= @post.user.name
+#post_show
+	%h1= @post.title
+	%p.username
+		Shared by
+		= @post.user.name
+		about
+		= time_ago_in_words(@post.created_at)
+	.clearfix
+		.post_image_description
+			= image_tag @post.image.url(:medium)
+			.description= simple_format(@post.description)
+		.post_data
+			= link_to "Visit Full Project", @post.link, class: "button"
+			%p.data
+				%i.fa.fa-comments-o
+				= pluralize(@post.comments.count, "Comment")
+			- if @post.user == current_user
+				= link_to "Edit", edit_post_path(@post), class: "data"
+				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "data"
 
-#comment
-  %h2.comment_count= pluralize(@post.comments.count, "comment")
-  - @comments.each do |comment|
-    .comment
-      %p.username= comment.user.name
-      %p.content= comment.content
 
-  = render "comments/form"
+#comments
+	%h2.comment_count= pluralize(@post.comments.count, "Comment")
+	- @comments.each do |comment|
+		.comment
+			%p.username= comment.user.name
+			%p.content= comment.content
 
-= link_to "Edit", edit_post_path(@post)
-= link_to "Destroy", post_path(@post), method: :delete, data: { confirm: "Are you sure?"}
-= link_to "Home", root_path
+	= render "comments/form"
