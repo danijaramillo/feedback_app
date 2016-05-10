@@ -20,7 +20,7 @@
 
 
 #comments
-	%h2.comment_count= pluralize(@post.comments.count, "Comment")
+	%h2.feedback= "Feedback"
 	- @comments.each do |comment|
 		.comment
 			%p.username= comment.user.name

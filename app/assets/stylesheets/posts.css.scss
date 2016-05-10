@@ -21,8 +21,8 @@
 			text-decoration: none;
 			color: #969696;
 			&:hover {
-				color: #50A7C7;
-				border: 1px solid #50A7C7;
+				color: #ec008c;
+				border: 1px solid #ec008c;
 			}
 		}
 		.data {
@@ -41,7 +41,7 @@
 #comments {
 	padding-bottom: 4rem;
 	width: 50%;
-	.comment_count {
+	.feedback {
 		border-bottom: 1px solid #E9E9E9;
 		padding-bottom: .5rem;
 		margin-bottom: 0;
@@ -62,7 +62,7 @@
 	}
 	.comment_content {
 		margin-top: 2.5rem;
-		textarea {
+			textarea {
 			width: 100%;
 			margin: 1rem 0;
 			min-height: 150px;

@@ -47,18 +47,28 @@ h1, h2, h3, h4, h5, h6 {
 	color: #9B9B9B;
 }
 
+.button2 {
+	border: 1px solid #ffffff;
+	padding: .7rem 1.25rem;
+	border-radius: .3rem;
+	outline: none;
+	background: none;
+	color: #fffffff;
+}
+
 header {
 	width: 100%;
 	padding: 2rem 0;
 	border-bottom: 1px solid #E4E4E4;
+	background-color: #ec008c;
 	#logo {
 		float: left;
 		font-size: 1.75rem;
 		a {
-			color: #333233;
+			color: #ffffff;
 			text-decoration: none;
 			&:hover {
-				color: #50A7C7;
+				color: #000000;
 			}
 		}
 	}
@@ -67,10 +77,11 @@ header {
 		a {
 			margin-left: 1.5rem;
 			line-height: 2;
-			color: #9B9B9B;
+			color: #ffffff;
 			text-decoration: none;
 			&:hover {
-				color: #50A7C7;
+				color: #000000;
+				border: 1px solid #000000;
 			}
 		}
 	}
@@ -78,3 +89,4 @@ header {
 
 @import 'home.css.scss';
 @import 'posts.css.scss';
+@import 'edit_page.css.scss';

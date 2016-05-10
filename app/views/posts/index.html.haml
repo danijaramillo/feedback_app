@@ -4,26 +4,28 @@
 		= current_user.name
 		%br/
 		%span
-			Upload your weekly class projects to get "Feedback"
+			Here are your weekly class projects.
+
+		#posts
+			- @posts.each do |post|
+				.post
+					.post_image
+						= link_to (image_tag post.image.url(:small)), post
+					.post_content
+						.title
+							%h2= link_to post.title, post
+						.data.clearfix
+							%p.username
+								Shared by
+								= post.user.name
+							%p.buttons
+								%span
+									%i.fa.fa-comments-o
+									= post.comments.count
+
 - else
 	%p#intro
-		What's your muse?
+		Sing-in to get "Feedback"
 		%br/
 		%span
-			Please sign-in to Upload your your weekly class projects to get "Feedback"
-#posts
-	- @posts.each do |post|
-		.post
-			.post_image
-				= link_to (image_tag post.image.url(:small)), post
-			.post_content
-				.title
-					%h2= link_to post.title, post
-				.data.clearfix
-					%p.username
-						Shared by
-						= post.user.name
-					%p.buttons
-						%span
-							%i.fa.fa-comments-o
-							= post.comments.count
+			Please sign-in to Upload your weekly class projects in order to get "Feedback"
